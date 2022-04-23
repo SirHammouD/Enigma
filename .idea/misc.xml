@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidApps/Enigma/app/src/main/res/layout/activity_main.xml" value="0.17249240121580547" />
+        <entry key="..\:/AndroidApps/Enigma/app/src/main/res/layout/fragment_account.xml" value="0.19739583333333333" />
+        <entry key="..\:/AndroidApps/Enigma/app/src/main/res/layout/fragment_dashboard.xml" value="0.19739583333333333" />
+        <entry key="..\:/AndroidApps/Enigma/app/src/main/res/layout/fragment_explore.xml" value="0.18333333333333332" />
+        <entry key="..\:/AndroidApps/Enigma/app/src/main/res/layout/fragment_login.xml" value="0.19739583333333333" />
+        <entry key="..\:/AndroidApps/Enigma/app/src/main/res/menu/nav_menu.xml" value="0.19739583333333333" />
       </map>
     </option>
   </component>
