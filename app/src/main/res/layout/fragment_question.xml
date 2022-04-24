@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/light_bg"
+    tools:context=".QuestionFragment">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/light_question"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="What is the name of Juptier’s largest moon?"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/hint1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/question"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/light_hint"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="This planet was kicked out of our solar system in 2006"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:padding="20dp"
+        android:id="@+id/hint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hint1"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/light_hint"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:padding="20dp"
+        android:id="@+id/hint3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hint2"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/light_hint"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>

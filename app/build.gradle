@@ -58,5 +58,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:17.0.0'
     // FirebaseUI for Firebase Realtime Database
     implementation 'com.firebaseui:firebase-ui-database:1.2.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 }
