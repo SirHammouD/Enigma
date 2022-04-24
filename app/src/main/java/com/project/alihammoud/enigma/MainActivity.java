@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     private AccountFragment accountFragment;
     private ExploreFragment exploreFragment;
     private LoginFragment loginFragment;
+    private SignUpFragment signUpFragment;
     boolean logged = false;
 
 
@@ -49,8 +50,9 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         accountFragment = new AccountFragment();
         exploreFragment = new ExploreFragment();
         loginFragment = new LoginFragment();
+        signUpFragment = new SignUpFragment();
 
-        if(logged){
+        if(!logged){
 
             SetFragment(loginFragment,"login");
         }
