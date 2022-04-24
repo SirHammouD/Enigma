@@ -113,7 +113,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
 
                             final FirebaseUser account = auth.getCurrentUser();
 
-                            final User info = new User(name, password, email );
+                            final User info = new User(name, password, email,"https://lh3.googleusercontent.com/xmzDn3Wmf5sVRiJmw8DqIzHdfQ_naCYxwjJsgw5AKF7klYVk5Q5DhaJEYyR9RnD_UeXx14DD9ayxc05zFtQyudUwVMSNKUOeSReaLbI=w600" );
 
                             // users.child(info.getUsername()).setValue(info);
                             users.child(account.getUid()).setValue(info);

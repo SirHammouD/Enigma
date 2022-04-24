@@ -1,5 +1,6 @@
 package com.project.alihammoud.enigma;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,7 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 
 public class AccountFragment extends Fragment implements View.OnClickListener{
@@ -29,6 +34,9 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
     FirebaseDatabase database;
     TextView setEmail, setName;
     LoginFragment loginFragment;
+    VideoView videoView;
+    Button rick;
+    ImageView imageView;
 
 
     @Override
@@ -38,7 +46,11 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         database = FirebaseDatabase.getInstance();
+        imageView = view.findViewById(R.id.profile_pic);
 
+        videoView = view.findViewById(R.id.rickroll);
+        videoView.setVisibility(View.GONE);
+        rick = (Button) view.findViewById(R.id.rick);
         loginFragment = new LoginFragment();
 
         setName = (TextView) view.findViewById(R.id.setName);
@@ -46,11 +58,15 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
         setEmail.setText(user.getEmail());
 
         view.findViewById(R.id.logout).setOnClickListener(this);
+        view.findViewById(R.id.rick).setOnClickListener(this);
         reference = database.getReference("Users").child(user.getUid());
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String firstname = snapshot.child("name").getValue().toString();
+                String img = snapshot.child("img").getValue().toString();
+
+                Picasso.get().load(img).into(imageView);
                 setName.setText(firstname);
             }
 
@@ -59,6 +75,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
 
             }
         });
+
 
         return view;
     }
@@ -73,6 +90,15 @@ public class AccountFragment extends Fragment implements View.OnClickListener{
                 fragmentTransaction.replace(R.id.frame, loginFragment, "login");
                 fragmentTransaction.commit();
                 break;
+            case R.id.rick:
+                rick.setVisibility(View.GONE);
+                videoView.setVisibility(View.VISIBLE);
+                String uriPath = "android.resource://" + getContext().getPackageName() + "/raw/rickroll";
+                Uri uri = Uri.parse(uriPath);
+                videoView.setVideoURI(uri);
+                videoView.start();
+
+
 
         }
     }

@@ -35,8 +35,8 @@ public class DashboardFragment extends Fragment {
     private Query items;
     private RecyclerView recyclerView;
     private GridLayoutManager layoutManager;
+    BottomNavigationView bottomNavigationView;
 
-BottomNavigationView bottomNavigationView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,9 +71,11 @@ BottomNavigationView bottomNavigationView;
 
         FirebaseRecyclerAdapter<Data, DataViewHolder> firebaseRecyclerAdapter = new
                 FirebaseRecyclerAdapter<Data, DataViewHolder>(Data.class,R.layout.cards_dashboard,DataViewHolder.class, items) {
+
             @Override
             protected void populateViewHolder(DataViewHolder viewHolder, Data model, int position) {
                 final String post_key = getRef(position).getKey();
+
 
                 viewHolder.setTitle(model.getTitle());
                 viewHolder.setImage(model.getImg());
@@ -92,7 +94,9 @@ BottomNavigationView bottomNavigationView;
                         activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame, articleFragment).addToBackStack("article").commit();
                     }
                 });
+
             }
+
         };
 
         recyclerView.setAdapter(firebaseRecyclerAdapter);

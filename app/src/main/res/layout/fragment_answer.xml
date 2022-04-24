@@ -15,20 +15,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/hint3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/dark_hint"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text=""
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/hint1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,6 +30,20 @@
 
         <TextView
             android:id="@+id/hint2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/dark_hint"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hint3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
